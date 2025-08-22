@@ -21,6 +21,19 @@ unsure how module ended up being named like this? Ans. forgot to add comma to se
 2nd attempt = No. forgot to 'include' app.urls in project.urls file.
 3rd attempt = Yes, encyclopedia app runs and displays placeholder html file.
 
+tests
+added one test for index view to confirm statuscode=200, and html rendering correctly
 
 # pending
-tests
+n/a
+
+
+--------------------------------------------------------------------------------------------
+
+## Feature 2 - Index View   
+
+This view returns a template encyclopedia/index.html, providing the template with a list of all of the entries in the encyclopedia (obtained by calling util.list_entries, which we saw defined in util.py).
+
+Assumptions:
+the wiki entries list should be the same for all users visiting the site => use global varaible to hold list, rather than using request.session to hold a local view of the list which prevents user B or C seeing changes made to the list by User A. 
+Question: can reqeust.session["entries"] = [] be used as a global list available to all users? Is it a cleaner way to work?
