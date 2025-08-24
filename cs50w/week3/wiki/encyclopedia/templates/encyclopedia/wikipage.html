@@ -1,0 +1,8 @@
+{% extends "encyclopedia/layout.html" %}
+{% load mdmini_tags %}
+
+{% block body %}
+
+    {{ html_page|markdown_mini|safe }}
+
+{% endblock%}

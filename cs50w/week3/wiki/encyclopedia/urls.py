@@ -5,6 +5,7 @@ from . import views
 app_name = "encyclopedia"
 
 urlpatterns = [
-    path("", views.index, name='index')
+    path("", views.index, name='index'),
+    path("<str:title>", views.get_title, name='get_title'),
 
 ]

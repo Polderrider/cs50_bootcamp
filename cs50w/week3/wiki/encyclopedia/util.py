@@ -13,9 +13,8 @@ def list_entries():
        """
     here = Path(__file__).resolve().parent
     rootdir = here / "entries"
-
     return [f.stem for f in rootdir.glob("*.md")]
-
+    
     # Debugging script
     # """Return names (without extension) of all .md files in entries/ one level up."""
     # here = Path(__file__).resolve().parent
@@ -38,13 +37,31 @@ def list_entries():
     #     if p.is_file() and p.suffix.lower() == ".md"
     # ]
     
-
-def get_entry():
+        
+def get_entry(title):
     """ returns an encyclopedia entry by its 
         title, returning its Markdown contents 
         if the entry exists or None if the entry does not exist 
       """
-    pass
+    
+    # access md files in entries folder
+    here = Path(__file__).resolve().parent # returns this file's absolute path
+    rootdir = here / "entries"  # enters entries folder 
+    md_file = rootdir/f'{title}.md'
+
+    if not md_file.exists():
+        raise FileNotFoundError(f"No entry found: {md_file}")
+
+    # read md_file into variable
+    md_data = md_file.read_text(encoding="utf-8")
+    
+    return md_data
+
+    # convert md_file data into html
+    # return html data to view
+
+
+
 
 def save_entry(title, md_file):
     """ saves a new encyclopedia entry, given 
