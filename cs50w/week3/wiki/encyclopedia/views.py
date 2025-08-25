@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from . import util
 
 
@@ -12,7 +13,12 @@ def index(request):
 
 def get_title(request, title):
 
-    html_page = util.get_entry(title)
+    try:
+
+        html_page = util.get_entry(title)
+        
+    except FileNotFoundError:
+        raise Http404
 
     return render(request, "encyclopedia/wikipage.html", {
         "html_page": html_page
