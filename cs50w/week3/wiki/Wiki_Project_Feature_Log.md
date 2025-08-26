@@ -12,14 +12,17 @@ Each feature should be developed on its own git branch before merging into main.
 | 1         | Project Setup                | Initialize Django project and app, create required folders and basic templates               |
 | 2         | Index View                   | Render the index page with a list of encyclopedia entries (static placeholder list for now)  |
 | 3         | Entry Markdown Storage       | Store each entry as a Markdown (.md) file in a local `entries/` folder                       |
-| 4         | Entry Markdown Retrieval     | Implement function to retrieve the Markdown content of an entry by title                     |
-| 5         | Markdown to HTML Conversion  | Convert Markdown to HTML before rendering entry pages                                        |
-| 6         | Entry Page View              | Create a dynamic route `/wiki/<title>` to display a specific entry                           |
-| 7         | Entry Not Found Page         | Display error page when a requested entry does not exist                                     |
-| 8         | Index Page Link Integration  | Turn each index entry into a link to its respective entry page                               |
-| 9         | Search Bar Form              | Add a working search form in the sidebar                                                     |
-| 10        | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
-| 11        | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
+| 3         | Entry Markdown Retrieval     | Implement function to retrieve the Markdown content of an entry by title                     |
+| 3         | Markdown to HTML Conversion  | Convert Markdown to HTML before rendering entry pages                                        |
+| 3         | Entry Page View              | Create a dynamic route `/wiki/<title>` to display a specific entry                           |
+| 3         | Entry Not Found Page         | Display error page when a requested entry does not exist                                     |
+
+| 4         | Tests                        | Create tests for project
+
+| 5         | Index Page Link Integration  | Turn each index entry into a link to its respective entry page                               |
+| 6         | Search Bar Form              | Add a working search form in the sidebar                                                     |
+| 7         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
+| 8         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
 | 12        | Search Results Linking       | Make each result entry on the search page link to the correct entry                          |
 | 13        | New Page Form View           | Create a form to add new pages, including title and Markdown textarea                        |
 | 14        | New Page Submission Logic    | Save new entry only if title does not exist; otherwise show error page                       |
