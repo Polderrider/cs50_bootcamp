@@ -4,5 +4,8 @@
 {% block body %}
 
     {{ html_page|markdown_mini|safe }}
+    <div>
+        <a href="{% url 'encyclopedia:index' %}">Return to main menu</a>
+    </div>
 
 {% endblock%}
