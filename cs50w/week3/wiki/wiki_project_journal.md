@@ -70,10 +70,20 @@ Gotcha: Ensure APP_DIRS=True or TEMPLATES['DIRS'] includes both the project-leve
 
 
 
-## Feature: 04 - markdown files displayed as html   
+## Feature: 04 - tests
+pending
+test 404 returned
+
+completed
+added tests for views to ensure status code 200 returned and md files correctly converted into html
 
 
+## Feature: 05 - Index Page Links
+add a link to each list entry shown on the index page which leads to the into a link to its respective html entry page 
 
-
+Notes: 
+use app_name = encyclopedia to access the namign convetion app_name:view name
+use templating language {% url '' %}
+add link inside templating language in  index.html
 
 

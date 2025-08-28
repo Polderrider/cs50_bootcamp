@@ -17,7 +17,8 @@ It specifies the page’s
         <h1>Encyclopedia</h1>
         <ul>
             {% for entry in entries %}
-            <li>{{ entry }}</li>
+            <!-- <li>{{ entry }}</li> -->
+            <li><a href="{% url 'encyclopedia:get_title' entry %}">{{ entry }}</a></li>
             {% empty %}
             <li>No entries yet</li>
             
