@@ -17,13 +17,11 @@ Each feature should be developed on its own git branch before merging into main.
 | 3         | Entry Page View              | Create a dynamic route `/wiki/<title>` to display a specific entry                           |
 | 3         | Entry Not Found Page         | Display error page when a requested entry does not exist                                     |
 | 4         | Tests                        | Create tests for project
-
 | 5         | Index Page Link Integration  | Turn each index page list entry into a link to its respective entry page                     |
 | 5.1       | Return to Index Page Links   | link wikipage back to the index page                    |
 
-
-
 | 6         | Search Bar Form              | Add a working search form in the sidebar                                                     |
+
 | 7         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
 | 8         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
 | 12        | Search Results Linking       | Make each result entry on the search page link to the correct entry                          |
