@@ -70,10 +70,32 @@ Gotcha: Ensure APP_DIRS=True or TEMPLATES['DIRS'] includes both the project-leve
 
 
 
-## Feature: 04 - markdown files displayed as html   
+## Feature: 04 - tests
+pending
+test 404 returned
+
+completed
+added tests for views to ensure status code 200 returned and md files correctly converted into html
 
 
+## Feature: 05 - Index Page Links
+add a link to each list entry shown on the index page which leads to the into a link to its respective html entry page 
 
+Notes: 
+use app_name = encyclopedia to access the namign convetion app_name:view name
+use templating language {% url '' %}
+add link inside templating language in  index.html
+
+Learnings:
+{% url 'app_name.view_name' arg1 %}     arg1 should be passed without templating {{ arg1 }}
+eg incorrect {% url 'app_name.view_name' {{ arg1 }} %}    
+
+html: position <li> </li> around <a href="">
+correct: <li><a href="{% url 'encyclopedia:get_title' entry %}">{{ entry }}</a></li> so that each list item contains a link (instead of a link containing a list item).
+possible to do it the other way, because the browser's error-correction rules fix incorrect markup.
+Reasons to het it right: CSS selectors (ul > li > a) may break. / Browsers may fix it differently / Future browser changes could make your “working” HTML stop working.
+
+## Feature: 05.1 - Link wikipage back to index page
 
 
 

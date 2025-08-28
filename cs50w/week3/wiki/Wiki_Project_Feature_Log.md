@@ -16,10 +16,13 @@ Each feature should be developed on its own git branch before merging into main.
 | 3         | Markdown to HTML Conversion  | Convert Markdown to HTML before rendering entry pages                                        |
 | 3         | Entry Page View              | Create a dynamic route `/wiki/<title>` to display a specific entry                           |
 | 3         | Entry Not Found Page         | Display error page when a requested entry does not exist                                     |
-
 | 4         | Tests                        | Create tests for project
 
-| 5         | Index Page Link Integration  | Turn each index entry into a link to its respective entry page                               |
+| 5         | Index Page Link Integration  | Turn each index page list entry into a link to its respective entry page                     |
+| 5.1       | Return to Index Page Links   | link wikipage back to the index page                    |
+
+
+
 | 6         | Search Bar Form              | Add a working search form in the sidebar                                                     |
 | 7         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
 | 8         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
@@ -32,6 +35,8 @@ Each feature should be developed on its own git branch before merging into main.
 | 18        | Edit Link on Entry Page      | Add a link to each entry page to access the edit form                                        |
 | 19        | Random Entry View            | Create view to redirect to a random entry                                                    |
 | 20        | Random Page Link             | Add working “Random Page” link in sidebar                                                    |
+| 21        | HTML Validator Integration   | Use HTML validator to check rendered html templates to catch invalid nesting and markup early |
+
 
 ---
 

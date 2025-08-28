@@ -14,9 +14,7 @@ def index(request):
 def get_title(request, title):
 
     try:
-
         html_page = util.get_entry(title)
-        
     except FileNotFoundError:
         raise Http404
 
