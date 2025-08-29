@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+        <h1>Encyclopedia</h1>
+        <h2>Search Results</h2>
+
+  
+        <p>Your search was unsuccessful. Perhaps these articles are of interest.</p>
+        <ul>
+            {% for article in similar %}
+            <li><a href="{% url 'encyclopedia:get_title' article %}">{{ article }}</a></li>
+            {% empty %}
+            <li>No articles were found</li>
+            
+            {% endfor%}
+ 
+        </ul>
+{% endblock %}

@@ -15,7 +15,7 @@ def list_entries():
     rootdir = here / "entries"
     return [f.stem for f in rootdir.glob("*.md")]
     
-    # Debugging script
+    # region list_entries() debugging script
     # """Return names (without extension) of all .md files in entries/ one level up."""
     # here = Path(__file__).resolve().parent
     # rootdir = here / "entries"
@@ -36,6 +36,7 @@ def list_entries():
     #     for p in (rootdir.iterdir() if rootdir.exists() else [])
     #     if p.is_file() and p.suffix.lower() == ".md"
     # ]
+    # endregion
     
         
 def get_entry(title):
@@ -72,5 +73,4 @@ def save_entry(title, md_file):
 
 
 
-print(list_entries())
 
