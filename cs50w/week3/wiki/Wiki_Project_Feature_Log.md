@@ -19,15 +19,17 @@ Each feature should be developed on its own git branch before merging into main.
 | 4         | Tests                        | Create tests for project
 | 5         | Index Page Link Integration  | Turn each index page list entry into a link to its respective entry page                     |
 | 5.1       | Return to Index Page Links   | link wikipage back to the index page                    |
-
 | 6         | Search Bar Form              | Add a working search form in the sidebar                                                     |
+| 6         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
+| 6         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
+| 6         | Search Results Linking       | Make each result entry on the search page link to the correct entry                          |
 
-| 7         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
-| 8         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
-| 12        | Search Results Linking       | Make each result entry on the search page link to the correct entry                          |
-| 13        | New Page Form View           | Create a form to add new pages, including title and Markdown textarea                        |
-| 14        | New Page Submission Logic    | Save new entry only if title does not exist; otherwise show error page                       |
-| 15        | New Page Redirect            | Redirect to new entry page after saving a valid new page                                     |
+| 7.0        | New Page Form View           | Create a form to add new pages, including title and Markdown textarea                        |
+| 7.1        | New Page Submission Logic    | Save new entry only if title does not exist; otherwise show error page                       |
+| 7.2        | New Page Redirect            | Redirect to new entry page after saving a valid new page                                     |
+
+
+
 | 16        | Edit Page View               | Display a form pre-filled with current Markdown for editing an existing entry                |
 | 17        | Edit Page Save Logic         | Save edited content and redirect back to updated entry page                                  |
 | 18        | Edit Link on Entry Page      | Add a link to each entry page to access the edit form                                        |
