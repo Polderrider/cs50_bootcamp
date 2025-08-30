@@ -105,6 +105,7 @@ REqurieemnts
 
 Pending
 tweak wording of search result messages returned to user to improve UX
+Add link for home button
 
 Completed
 layout.html updated with sidebar etc

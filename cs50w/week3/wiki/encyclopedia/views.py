@@ -78,6 +78,7 @@ def search(request):
 
     return render(request, "encyclopedia/search_results.html", {
         "similar": similar,
+        "query": query
         
     })
 

@@ -86,15 +86,19 @@ body {
   display: block;
   padding: 10px 12px;
   border-radius: 10px;
-  text-decoration: none;
-  color: var(--text);
   border: 1px solid rgba(148,163,184,0.12);
   background: linear-gradient(180deg, #0f172a, #0b1220);
 }
+.nav a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
 .nav a:hover {
   border-color: rgba(148,163,184,0.35);
   box-shadow: 0 0 0 3px var(--ring);
 }
+
 .nav li + li a { margin-top: 2px; }
 
 /* Main content */
@@ -134,3 +138,15 @@ body {
     border-top: 1px solid rgba(148,163,184,0.08);
   }
 }
+
+/* ---- Fix nav link underline + visited color ---- */
+.nav ul li a:any-link,
+.nav ul li a:any-link:visited,
+.nav ul li a:any-link:hover,
+.nav ul li a:any-link:active,
+.nav ul li a:any-link:focus {
+  text-decoration: none !important;
+  color: var(--text) !important;
+  cursor: pointer; /* optional: override `cursor: auto` */
+}
+

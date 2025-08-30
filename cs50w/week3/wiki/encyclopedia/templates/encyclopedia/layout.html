@@ -30,7 +30,12 @@ links to create
 
       <nav class="nav" aria-label="Sidebar">
         <ul>
-          <li><a href="/">Home</a></li>
+        <style>
+        /* TEMP: should take effect immediately */
+        .nav a { text-decoration: none !important; color: var(--text) !important; }
+        </style>
+
+          <li><a href="{% url 'encyclopedia:index' %}">Home</a></li>
           <li><a href="#">Create New Page</a></li>
           <li><a href="#">Random Page</a></li>
         </ul>
