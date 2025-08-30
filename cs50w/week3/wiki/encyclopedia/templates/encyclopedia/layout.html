@@ -7,16 +7,44 @@ links to create
     visit a random page
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encyclopedia</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
 </head>
 <body>
-    {% block body %}
-    {% endblock %}
+  <div class="layout">
+    <aside class="sidebar" role="complementary">
+      <div class="brand">Encyclopedia</div>
+
+      <form class="search" action="{% url 'encyclopedia:search' %}" method="get" role="search">
+        <label for="q" class="visually-hidden">Search</label>
+        <input id="q" name="query" type="search" placeholder="Search…" />
+        <button type="submit">Search</button>
+      </form>
+
+     
+
+      <nav class="nav" aria-label="Sidebar">
+        <ul>
+        <style>
+        /* TEMP: should take effect immediately */
+        .nav a { text-decoration: none !important; color: var(--text) !important; }
+        </style>
+
+          <li><a href="{% url 'encyclopedia:index' %}">Home</a></li>
+          <li><a href="#">Create New Page</a></li>
+          <li><a href="#">Random Page</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content" role="main">
+      {% block body %}{% endblock %}
+    </main>
+  </div>
 </body>
 </html>

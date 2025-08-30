@@ -95,7 +95,31 @@ correct: <li><a href="{% url 'encyclopedia:get_title' entry %}">{{ entry }}</a><
 possible to do it the other way, because the browser's error-correction rules fix incorrect markup.
 Reasons to het it right: CSS selectors (ul > li > a) may break. / Browsers may fix it differently / Future browser changes could make your “working” HTML stop working.
 
-## Feature: 05.1 - Link wikipage back to index page
+## Feature: 05.1 - Return link from wikipage to index page
 
+## Feature: 06 - search bar
+REqurieemnts
+6.1 Search: Allow the user to type a query into the search box in the sidebar to search for an encyclopedia entry. If the query matches the name of an encyclopedia entry, the user should be redirected to that entry’s page.
+
+6.2 If the query does not match the name of an encyclopedia entry, the user should instead be taken to a search results page that displays a list of all encyclopedia entries that have the query as a substring. For example, if the search query were ```'ytho'```, then ```'Python'``` should appear in the search results.  Clicking on any of the entry names on the search results page should take the user to that entry’s page.
+
+Pending
+tweak wording of search result messages returned to user to improve UX
+Add link for home button
+
+Completed
+layout.html updated with sidebar etc
+static_dir added to settings, static/css/styles.css added to project root, {% load static %} tag included in html pages
+user search query exact match - matching wikipage.html returned
+user search query partial match - list of article titles containing search query returned as list
+
+
+
+Notes
+search uses GET method to retrieve 
+3 known options to add search form to support search functionality
+    1. html forms   2. Django forms     3. Crispy forms
+
+SearchResults.html needed for 6.2 copy wikipage
 
 

@@ -42,36 +42,32 @@ Your local main is now behind remote main. Pull to align -> git pull origin/main
 Delete it on GitHub and locally (or keep if you prefer).
 
 
- ┌───────────────────────┐
- │   Start work (day)    │
- └──────────┬────────────┘
-            │
-            ▼
- ┌───────────────────────┐
- │ git checkout main      │
- │ git pull origin main   │   ← ensure local main is up to date
- └──────────┬────────────┘
+ ┌─────────────────────────┐
+ │ Start work (day)        │
+ │   git checkout main     │
+ │   git pull origin main  │   ← ensure local main is up to date
+ └──────────┬──────────────┘
             │
             ▼
  ┌─────────────────────────────────┐
  │ Create new feature              │
- │ git checkout -b feature/XX-...  │
- │ git push -u origin feature/XX-  │
+ │   git checkout -b feature/XX-...  │
+ │   git push -u origin feature/XX-  │
  └──────────┬──────────────────────┘
             │
             ▼
  ┌───────────────────────┐
- │  Work on feature       │
- │  git add .             │
- │  git commit -m "..."   │
- │  git push              │
+ │ Work on feature       │
+ │   git add .             │
+ │   git commit -m "..."   │
+ │   git push              │
  └──────────┬────────────┘
             │
             ▼
  ┌──────────────────────────────┐
- │  Keep feature in sync        │
- │  git rebase origin/main      │   ← (before PR if main has moved)
- │  git push --force-with-lease │
+ │ Keep feature in sync        │
+ │   git rebase origin/main      │   ← (before PR if main has moved)
+ │   git push --force-with-lease │
  └──────────┬───────────────────┘
             │
             ▼
@@ -83,8 +79,8 @@ Delete it on GitHub and locally (or keep if you prefer).
             ▼
  ┌───────────────────────┐
  │ After PR merged        │
- │ git checkout main       │
- │ git pull origin main    │  ← sync local main again
+ │   git checkout main       │
+ │   git pull origin main    │  ← sync local main again
  └──────────┬────────────┘
             │
             ▼
@@ -115,3 +111,30 @@ git restore --staged <filepath or folder name>
 git remote -v           shows what origin is pointing to (your GitHub repo URL).
 
 git push -u origin feature2         -u sets the upstream so future pushes can just be git push. This ensures GitHub also knows about your new branch.
+
+
+
+
+begin work on feature 6
+
+
+git checkout main           make sure on main, ready for next step which is to pull the latest remote version to local git
+git pull origin main        latest version from github add to local main
+
+git branch feature/06-...   create new brancch
+git checkout feature/06     move to new branch. alternatively combine the commands as git checkout -b feature/06...
+git push -u origin feature/XX-    note -u flag used only on first push
+
+                            edit 1
+git add .                   (when using root dir . make sure i am in teh correct folder).  edited files staged ready to be added to local version
+git commit -m "saa"         
+git push                    latest version of main now includes latest edit. 
+
+                            feature 6 finished.  local version is up to date. now need to add edits to remote version
+git rebase origin/main      begins process to add local changes to remote files by opening a Pull Request on github
+git push
+
+                            check and merge PR
+
+git checkout main
+git pull origin main
