@@ -5,7 +5,6 @@ def list_entries():
     """ returns a list of the names of all 
         encyclopedia entries currently saved 
     """
-
     """ 
      Notes: 
      .resolve(). will return an absolute path. If the path is already absolute the method will have no effect. https://stackoverflow.com/questions/76451315/difference-between-pathlib-path-resolve-and-pathlib-path-parent
@@ -64,11 +63,16 @@ def get_entry(title):
 
 
 
-def save_entry(title, md_file):
+def save_entry(title, content, here):
     """ saves a new encyclopedia entry, given 
         its title and some Markdown content  
     """
-    pass
+    rootdir = here / "entries"
+
+    # write user data to file stored in /entries/
+    file = open(f'{rootdir}/{title}.md', 'x')
+    file.write(content)
+    file.close() 
 
 
 
