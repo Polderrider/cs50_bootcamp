@@ -115,15 +115,11 @@ def add(request):
                 return render(request, "encyclopedia/add.html", {
                     "form": form,
                 })
-
-            # write title and content to markdown file
-            here = Path(__file__).resolve().parent
-            rootdir = here / "entries"
             
-            # # write user data to file stored in /entries/
-            file = open(f'{rootdir}/{title}.md', 'x')
-            file.write(content)
-            file.close() 
+            # save content as new md file
+            here = Path(__file__).resolve().parent
+            util.save_entry(title, content, here)
+            
             return redirect("encyclopedia:get_title", title=title)
 
         # form data not valid

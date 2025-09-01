@@ -63,11 +63,16 @@ def get_entry(title):
 
 
 
-def save_entry(title, md_file):
+def save_entry(title, content, here):
     """ saves a new encyclopedia entry, given 
         its title and some Markdown content  
     """
-    pass
+    rootdir = here / "entries"
+
+    # write user data to file stored in /entries/
+    file = open(f'{rootdir}/{title}.md', 'x')
+    file.write(content)
+    file.close() 
 
 
 
