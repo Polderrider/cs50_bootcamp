@@ -23,7 +23,6 @@ Each feature should be developed on its own git branch before merging into main.
 | 6         | Exact Match Search Redirect  | Redirect to entry page if user search query matches an entry title exactly                   |
 | 6         | Partial Match Search Results | Display a search results page with entries containing the search substring                   |
 | 6         | Search Results Linking       | Make each result entry on the search page link to the correct entry                          |
-
 | 7.0        | New Page Form View           | Create a form to add new pages, including title and Markdown textarea                        |
 | 7.1        | New Page Submission Logic    | Save new entry only if title does not exist; otherwise show error page                       |
 | 7.2        | New Page Redirect            | Redirect to new entry page after saving a valid new page                                     |

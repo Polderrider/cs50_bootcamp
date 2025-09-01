@@ -8,12 +8,17 @@ urlpatterns = [
     path("", views.index, name='index'),                        # index page
     path("<str:title>", views.get_title, name='get_title'),
     path("search/", views.search, name='search'),
-
+    path("add/", views.add, name='add'),
 ]
+
+
+
 
 # PAGES
 # /encyclopedia/                        → index page
 # /encyclopedia/Liverpool               → wiki page
+# /encyclopedia/add                     → create new wiki page
+
 
 
 # QUERIES

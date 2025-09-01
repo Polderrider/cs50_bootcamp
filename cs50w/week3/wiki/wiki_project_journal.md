@@ -127,4 +127,22 @@ def view_name(request):    query = request.GET["query"].strip()    # or query = 
 
 Create a form to add new pages, including title and Markdown textarea  
 
- 
+Pending Tasks:
+
+
+Completed Tasks:
+1. add new entry button link -> created add.html
+2. create django form (class) in def add() in views.py
+3. handle 3 situation is def add() 1. POST valid form, 2. POST invalid form 3. GET empty form
+
+
+
+### Notes:
+#### {% csrf_token %} 
+user will send data from client to server which is expected to be saved to disk.  POSTing data requieres the {% csrf_token %} to be displayed within the form html for site securtiy purposes
+
+### form
+ django forms, create class NewForm in view (consder moving to util.py), 
+ pass form to html page using django templating {} language
+
+### messages.error
