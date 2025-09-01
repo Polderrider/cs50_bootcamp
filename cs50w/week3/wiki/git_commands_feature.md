@@ -49,7 +49,7 @@ Delete it on GitHub and locally (or keep if you prefer).
  └──────────┬──────────────┘
             │
             ▼
- ┌─────────────────────────────────┐
+┌─────────────────────────────────┐
  │ Create new feature              │
  │   git checkout -b feature/XX-...  │
  │   git push -u origin feature/XX-  │

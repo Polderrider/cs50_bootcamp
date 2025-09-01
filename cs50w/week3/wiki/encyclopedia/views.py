@@ -119,7 +119,7 @@ def add(request):
             # save content as new md file
             here = Path(__file__).resolve().parent
             util.save_entry(title, content, here)
-            
+                
             return redirect("encyclopedia:get_title", title=title)
 
         # form data not valid
