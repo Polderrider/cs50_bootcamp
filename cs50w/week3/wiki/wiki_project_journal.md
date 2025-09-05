@@ -146,3 +146,11 @@ user will send data from client to server which is expected to be saved to disk.
  pass form to html page using django templating {} language
 
 ### messages.error
+
+
+## Feature 08 - edit page 
+
+
+Pending
+create edit.html that receives form data for an article -> copy add.html, loads form data based on title
+

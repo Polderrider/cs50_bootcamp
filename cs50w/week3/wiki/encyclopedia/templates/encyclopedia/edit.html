@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+    <h1>Edit {{ title }}</h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}" role="alert" aria-live="polite">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    
+    <form action="{% url 'encyclopedia:edit' title %}" method="post">
+
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <div class="form-actions">
+            <a href="{% url 'encyclopedia:index' %}" class="btn">Cancel</a>
+            <button type="submit" class="btn">Save changes</button>
+        </div>
+        
+    </form>
+    
+    
+
+        
+{% endblock %}
