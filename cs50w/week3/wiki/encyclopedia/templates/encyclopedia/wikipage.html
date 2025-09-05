@@ -5,8 +5,14 @@
 {% block body %}
 
     {{ html_page|markdown_mini|safe }}
-    <div>
-        <a href="{% url 'encyclopedia:index' %}">Return to main menu</a>
+
+
+
+
+    <div class="form-actions">
+        <a href="{% url 'encyclopedia:index' %}" class="btn">Return to Homepage</a>
+        <a href="{% url 'encyclopedia:edit' title %}" class="btn">Edit Page</a>
     </div>
+
 
 {% endblock%}
