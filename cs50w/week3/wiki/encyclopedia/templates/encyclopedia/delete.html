@@ -1,7 +1,7 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-    <h1>Edit {{ title }}</h1>
+    <h1>Delete {{ title }} page</h1>
 
     {% if messages %}
     {% for message in messages %}
@@ -12,16 +12,18 @@
     {% endif %}
 
     
-    <form action="{% url 'encyclopedia:edit' title %}" method="post">
+    <form action="{% url 'encyclopedia:delete' title %}" method="post">
 
 
         {% csrf_token %}
-        {{ form.as_p }}
+        <p>Article name selected for deletion: {{ title }}</p>
+
+       
         
         <div class="form-actions">
             <a href="{% url 'encyclopedia:index' %}" class="btn">Cancel</a>
-            <button type="submit" class="btn">Save changes</button>
-            <a href="{% url 'encyclopedia:delete' title %}" class="btn">Delete page</a>
+            <button type="submit" class="btn">Delete Page</button>
+
             
         </div>
         

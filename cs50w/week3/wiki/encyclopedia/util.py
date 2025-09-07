@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 
 
 def list_entries():
@@ -12,7 +13,7 @@ def list_entries():
        """
     here = Path(__file__).resolve().parent
     rootdir = here / "entries"
-    return [f.stem for f in rootdir.glob("*.md")]
+    return [f.stem.capitalize() for f in rootdir.glob("*.md")]
     
     # region list_entries() debugging script
     # """Return names (without extension) of all .md files in entries/ one level up."""
@@ -37,7 +38,20 @@ def list_entries():
     # ]
     # endregion
     
-        
+def list_trash():
+    """ returns a list of the names of all 
+        encyclopedia entries currently saved 
+    """
+    """ 
+     Notes: 
+     .resolve(). will return an absolute path. If the path is already absolute the method will have no effect. https://stackoverflow.com/questions/76451315/difference-between-pathlib-path-resolve-and-pathlib-path-parent
+     .glob('pattern') finds all the pathnames matching a specified pattern https://docs.python.org/3/library/glob.html
+       """
+    here = Path(__file__).resolve().parent
+    rootdir = here / "trash"
+    return [f.stem.capitalize() for f in rootdir.glob("*.md")]
+
+
 def get_entry(title):
     """ returns an encyclopedia entry by its 
         title, returning its Markdown contents 
@@ -60,15 +74,10 @@ def get_entry(title):
     # convert md_file data into html
     # return html data to view
 
-
-
-
 def save_entry(title, content, here):
     """ saves a new encyclopedia entry, given 
         its title and some Markdown content  
     """
-
-
     rootdir = here / "entries"
 
     # write user data to file stored in /entries/
@@ -78,6 +87,21 @@ def save_entry(title, content, here):
 
     with open(f"{rootdir}/{title}.md", "w") as file:
         file.write(content)
+
+
+
+def move_file_trash(title, project_dir):
+
+    entries = project_dir / "entries"
+    if not entries:
+        Path.mkdir(f'{project_dir}/"entries"')
+
+    trash = project_dir / "trash"
+
+    # move deleted title to trash folder
+    shutil.move(f'{entries}/{title}.md', trash)
+
+    
 
 
     
