@@ -26,14 +26,15 @@ Each feature should be developed on its own git branch before merging into main.
 | 7.0        | New Page Form View           | Create a form to add new pages, including title and Markdown textarea                        |
 | 7.1        | New Page Submission Logic    | Save new entry only if title does not exist; otherwise show error page                       |
 | 7.2        | New Page Redirect            | Redirect to new entry page after saving a valid new page                                     |
-
 | 8.0        | Edit Page View               | Display a form pre-filled with current Markdown for editing an existing entry                |
 | 8.1        | Edit Page Save Logic         | Save edited content and redirect back to updated entry page                                  |
 | 8.2        | Edit Link on Entry Page      | Add a link to each entry page to access the edit form                                        |
-
+| 9.0        | Delete functionality         | add delete button to edit page; move .md file to a folder named trash                        |
 
 | 19        | Random Entry View            | Create view to redirect to a random entry                                                    |
 | 20        | Random Page Link             | Add working “Random Page” link in sidebar                                                    |
+
+
 | 21        | HTML Validator Integration   | Use HTML validator to check rendered html templates to catch invalid nesting and markup early |
 | 22        | add.html UI                  | add markdown guide for user                                                                    |
 

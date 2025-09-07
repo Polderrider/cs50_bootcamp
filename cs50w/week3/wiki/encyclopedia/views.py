@@ -195,7 +195,23 @@ def edit(request, title):
     })
 
 
+def delete(request, title):
 
+    # delete article
+    if request.method == "POST":
+
+        # establish rootdir relative to this file
+        project_dir = Path(__file__).resolve().parent
+        # move filename to static/trash file
+        util.move_file_trash(title, project_dir)
+
+        return redirect("encyclopedia:index")
+
+    
+    
+    return render(request, "encyclopedia/delete.html", {
+        "title": title,
+    })
     
 
 
