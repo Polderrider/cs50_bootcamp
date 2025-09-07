@@ -18,7 +18,7 @@ Founded well before 1930s, they compete in the **Premier League** and play at th
 ## Notable Players
 - Thierry Henry  
 - Ian Wright  
-- Tony Adams  
+- Dennis Bergkamp
 
 ---
 
