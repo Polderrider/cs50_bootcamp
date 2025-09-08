@@ -31,8 +31,8 @@ Each feature should be developed on its own git branch before merging into main.
 | 8.2        | Edit Link on Entry Page      | Add a link to each entry page to access the edit form                                        |
 | 9.0        | Delete functionality         | add delete button to edit page; move .md file to a folder named trash                        |
 
-| 19        | Random Entry View            | Create view to redirect to a random entry                                                    |
-| 20        | Random Page Link             | Add working “Random Page” link in sidebar                                                    |
+| 10        | Random Entry View            | Create view to redirect to a random entry                                                    |
+| 10.1      | Random Page Link             | Add working “Random Page” link in sidebar                                                    |
 
 
 | 21        | HTML Validator Integration   | Use HTML validator to check rendered html templates to catch invalid nesting and markup early |
