@@ -11,6 +11,9 @@ urlpatterns = [
     path("add/", views.add, name='add'),
     path("edit/<str:title>", views.edit, name='edit'),
     path("delete/<str:title>", views.delete, name='delete'),
+    path("get_random_title/", views.get_random_title, name='get_random_title'),
+
+    
 
 ]
 

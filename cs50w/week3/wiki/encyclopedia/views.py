@@ -6,6 +6,7 @@ from django import forms
 from pathlib import Path
 from django.contrib import messages
 
+import random
 
 
 class WikipageForm(forms.Form):
@@ -59,11 +60,32 @@ def my_view(request):
 """
 
 
+def get_random_title(request):
+    
+    # return list of articles
+    articles = util.list_entries()
+    # random number
+    number = random.randrange(0, len(articles))
+    title = articles[number]
+    try:
+        html_page = util.get_entry(title.lower())
+    except FileNotFoundError:
+        raise Http404
+
+    return render(request, "encyclopedia/wikipage.html", {
+        "html_page": html_page,
+        "title": title
+    })
+
+
+
+
 def search(request):
     """ extracts the user's submittted query term from request object in order to return a wikipage matching the query term exactly, or a list of wikiepage titles that contain the user's query """
     
     # get user's query from request originating from html form input
     query = request.GET["query"].strip()    # or query = request.GET.get("query", "").strip()
+   
     if not query:
         return redirect("encyclopedia:index")
     # return list of articles on file
@@ -139,7 +161,6 @@ def add(request):
     })
     
 
-
 def edit(request, title):
     """ 
     accepts an article title and returns:
@@ -196,6 +217,7 @@ def edit(request, title):
 
 
 def delete(request, title):
+    """ removes a file from the index list of articles for a given title and moves it to a trash folder """
 
     # delete article
     if request.method == "POST":

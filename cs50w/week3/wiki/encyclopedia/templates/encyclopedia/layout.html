@@ -32,7 +32,7 @@ links to create
         <ul>
           <li><a href="{% url 'encyclopedia:index' %}">Home</a></li>
           <li><a href="{% url 'encyclopedia:add' %}">Create New Page</a></li>
-          <li><a href="#">Random Page</a></li>
+          <li><a href="{% url 'encyclopedia:get_random_title' %}">Random Page</a></li>
         </ul>
       </nav>
     </aside>

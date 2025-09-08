@@ -22,6 +22,7 @@ Founded in **1880** (as St. Mark’s, becoming Manchester City in 1894), they co
 - Sergio Agüero  
 - Kevin De Bruyne  
 - Vincent Kompany  
+- Jack Grealish
 
 ---
 
