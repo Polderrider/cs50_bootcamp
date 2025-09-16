@@ -150,7 +150,23 @@ user will send data from client to server which is expected to be saved to disk.
 
 ## Feature 08 - edit page 
 
-
 Pending
-create edit.html that receives form data for an article -> copy add.html, loads form data based on title
+display form data for article on edit.html
+
+Completed
+created edit.html
+
+## Feature 09 - edit page 
+## Feature 10 - edit page 
+
+## Feature 11 - Change article title
+
+
+recap how title is passed between views
+
+view            |       url                         |       title passing method
+
+get_title()     |       get_title/<str:title>       |       
+
+
 

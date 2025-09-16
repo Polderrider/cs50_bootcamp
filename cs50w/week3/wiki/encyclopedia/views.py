@@ -18,6 +18,16 @@ class WikipageForm(forms.Form):
         widget=forms.Textarea(attrs={"rows": 40, "cols": 100}), 
         max_length=5000, 
     )
+
+class ChangeTitleForm(forms.Form):
+    """ allows user to change an existing title of an article """
+    old_title = forms.CharField(
+        label="Existing Title", 
+        max_length=50,
+        widget=forms.TextInput(attrs={"readonly": "readonly"}),
+    )
+    new_title = forms.CharField(label="New Title", max_length=50)
+
     
 
 
@@ -76,8 +86,6 @@ def get_random_title(request):
         "html_page": html_page,
         "title": title
     })
-
-
 
 
 def search(request):
@@ -236,6 +244,51 @@ def delete(request, title):
     })
     
 
+
+
+def change_title(request, title):
+    # POST 
+    if request.method == "POST":
+
+        form = ChangeTitleForm(request.POST)
+        if form.is_valid():
+            
+            # user inputs
+            new_title = form.cleaned_data["new_title"]
+
+            ## file paths
+            here = Path(__file__).resolve().parent
+            entries_dir = here / "entries"
+            old_path = entries_dir / f"{title}.md"
+            new_path = entries_dir / f"{new_title}.md"
+
+            # new title filname exists
+            if new_path.exists():
+                messages.error(request, f'An entry titled “{new_title}” already exists.')
+                # re-render form so user can pick another title
+                return render(request, "encyclopedia/edit.html", {"form": form, "title": title})
+
+            # edited title accepted
+            old_path.rename(new_path)   # atomic rename if same filesystem
+            return redirect("encyclopedia:get_title", title=new_title)
+
+
+        
+
+        # invalid form  → re-render with errors
+        return render(request, "encyclopedia/change_title.html", {
+            "new_title_form": new_title_form, 
+            "title": title,
+        })
+    
+    new_title_form = ChangeTitleForm(initial={"old_title": title})
+
+
+    # GET empty form
+    return render(request, "encyclopedia/change_title.html", {
+        "title": title,
+        "new_title_form": new_title_form,
+    })
 
   
 

@@ -66,7 +66,7 @@ Delete it on GitHub and locally (or keep if you prefer).
             ▼
  ┌──────────────────────────────┐
  │ Keep feature in sync        │
- │   git rebase origin/main      │   ← (before PR if main has moved)
+    │   git rebase origin/main      │   ← (before PR if main has moved)
  │   git push --force-with-lease │
  └──────────┬───────────────────┘
             │

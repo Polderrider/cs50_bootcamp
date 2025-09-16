@@ -1,0 +1,34 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+    <h1>Change Article Title for "{{ title }}"</h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}" role="alert" aria-live="polite">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+
+
+    <form action="{% url 'encyclopedia:change_title' title %}" method="post">
+        {% csrf_token %}
+        {{ new_title_form }}
+        
+        <input class="btn" type="submit" value="Save">
+        <a href="{% url 'encyclopedia:edit' title %}" class="btn">Cancel</a>
+    </form> 
+
+    
+
+
+
+
+        
+    <a href="{% url 'encyclopedia:index' %}">Return to Homepage</a>
+
+        
+{% endblock %}

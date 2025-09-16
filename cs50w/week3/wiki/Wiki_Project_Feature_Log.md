@@ -30,9 +30,19 @@ Each feature should be developed on its own git branch before merging into main.
 | 8.1        | Edit Page Save Logic         | Save edited content and redirect back to updated entry page                                  |
 | 8.2        | Edit Link on Entry Page      | Add a link to each entry page to access the edit form                                        |
 | 9.0        | Delete functionality         | add delete button to edit page; move .md file to a folder named trash                        |
+| 10        | Random Entry View             | Create view to redirect to a random entry                                                    |
 
-| 10        | Random Entry View            | Create view to redirect to a random entry                                                    |
-| 10.1      | Random Page Link             | Add working “Random Page” link in sidebar                                                    |
+| 11      | rename page form               | Separate from edit—accept existing title and a new title to rename the file.                     | case-insensitivity and duplicate checks.
+
+
+
+
+| 12      | Search Filter form             | Add dropdowns/radios to filter results (e.g. “Starts with…”, “Contains…”, “Ends with…”)           | text input and select/radio fields
+| 13      | Export Page Form               | Pick a page from a dropdown, choose export format (Markdown, HTML, plain text), and then render it in the browser.    |
+| 14.     | add flash messages.            |                          |
+
+
+| XX      | next feature name            | description                                               |
 
 
 | 21        | HTML Validator Integration   | Use HTML validator to check rendered html templates to catch invalid nesting and markup early |

@@ -7,6 +7,9 @@ links to create
     visit a random page
 -->
 
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +17,16 @@ links to create
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Encyclopedia</title>
   <link rel="stylesheet" href="/static/css/styles.css" />
+
+
+
+
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar" role="complementary">
       <div class="brand">Encyclopedia</div>
+
 
       <form class="search" action="{% url 'encyclopedia:search' %}" method="get" role="search">
         <label for="q" class="visually-hidden">Search</label>
@@ -33,6 +41,7 @@ links to create
           <li><a href="{% url 'encyclopedia:index' %}">Home</a></li>
           <li><a href="{% url 'encyclopedia:add' %}">Create New Page</a></li>
           <li><a href="{% url 'encyclopedia:get_random_title' %}">Random Page</a></li>
+
         </ul>
       </nav>
     </aside>
@@ -41,5 +50,9 @@ links to create
       {% block body %}{% endblock %}
     </main>
   </div>
+
+
+  <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>
