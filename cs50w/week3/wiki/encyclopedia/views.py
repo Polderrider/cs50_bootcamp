@@ -6,7 +6,10 @@ from django import forms
 from pathlib import Path
 from django.contrib import messages
 
+from django.core.validators import RegexValidator
 import random
+import pdb
+
 
 
 class WikipageForm(forms.Form):
@@ -18,7 +21,17 @@ class WikipageForm(forms.Form):
         widget=forms.Textarea(attrs={"rows": 40, "cols": 100}), 
         max_length=5000, 
     )
-    
+
+class ChangeTitleForm(forms.Form):
+    """ allows user to change an existing title of an article """
+    AlphanumericValidator = RegexValidator(r'^[0-9a-zA-Z\s]*$', 'Only letter and numbers are allowed. Please try again')
+
+    old_title = forms.CharField(
+        label="Existing Title", 
+        max_length=50,
+        widget=forms.TextInput(attrs={"readonly": "readonly"}),
+    )
+    new_title = forms.CharField(label="New Title", max_length=50, validators=[AlphanumericValidator])
 
 
 def index(request):
@@ -27,7 +40,6 @@ def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
-
 
 def get_title(request, title):
     """ return article content to wikipage for a given title """
@@ -59,7 +71,6 @@ def my_view(request):
         raise Http404("No MyModel matches the given query.")
 """
 
-
 def get_random_title(request):
     
     # return list of articles
@@ -76,9 +87,6 @@ def get_random_title(request):
         "html_page": html_page,
         "title": title
     })
-
-
-
 
 def search(request):
     """ extracts the user's submittted query term from request object in order to return a wikipage matching the query term exactly, or a list of wikiepage titles that contain the user's query """
@@ -112,7 +120,6 @@ def search(request):
         "query": query
         
     })
-
 
 def add(request):
 
@@ -159,7 +166,6 @@ def add(request):
     return render(request, "encyclopedia/add.html", {
         "form": WikipageForm()
     })
-    
 
 def edit(request, title):
     """ 
@@ -177,6 +183,7 @@ def edit(request, title):
         form = WikipageForm(request.POST)
         if form.is_valid():
             # user inputs
+
             new_title = form.cleaned_data["title"]
             new_content = form.cleaned_data["content"]
 
@@ -215,7 +222,6 @@ def edit(request, title):
         "title" : title
     })
 
-
 def delete(request, title):
     """ removes a file from the index list of articles for a given title and moves it to a trash folder """
 
@@ -235,7 +241,58 @@ def delete(request, title):
         "title": title,
     })
     
+def change_title(request, title):
+    # POST 
+    if request.method == "POST":
 
+        new_title_form = ChangeTitleForm(request.POST)
+
+        if new_title_form.is_valid():
+            # pdb.set_trace()
+
+            # user inputs
+            new_title = new_title_form.cleaned_data["new_title"]
+            # file paths
+            here = Path(__file__).resolve().parent
+            entries_dir = here / "entries"
+
+            old_path = entries_dir / f"{title}.md"
+            if not old_path.exists(): raise Http404("article not found")
+            
+            new_path = entries_dir / f"{new_title.lower()}.md"
+
+            # new title filname exists
+            if new_path.exists():
+                messages.error(request, f'An entry titled “{new_title}” already exists.')
+                # re-render form so user can pick another title
+                return render(request, "encyclopedia/change_title.html", {
+                            "new_title_form": new_title_form, 
+                            "title": title,
+                        })
+            
+            # new title accepted
+            old_path.rename(new_path)   # atomic rename if same filesystem
+
+
+
+            messages.success(request, f'Article succesfully renamed to "{new_title}"')
+            
+            return redirect("encyclopedia:get_title", title=new_title)
+
+        # invalid form  → re-render with errors
+        return render(request, "encyclopedia/change_title.html", {
+            "new_title_form": new_title_form, 
+            "title": title,
+        })
+    
+    new_title_form = ChangeTitleForm(initial={"old_title": title})
+
+
+    # GET empty form
+    return render(request, "encyclopedia/change_title.html", {
+        "new_title_form": new_title_form,
+        "title": title,
+    })
 
   
 

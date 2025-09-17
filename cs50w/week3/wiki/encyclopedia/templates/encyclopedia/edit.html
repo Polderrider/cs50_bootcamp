@@ -1,7 +1,7 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-    <h1>Edit {{ title }}</h1>
+    <h1>Edit "{{ title }}"</h1>
 
     {% if messages %}
     {% for message in messages %}
@@ -10,6 +10,7 @@
     </div>
     {% endfor %}
     {% endif %}
+
 
     
     <form action="{% url 'encyclopedia:edit' title %}" method="post">
@@ -22,6 +23,8 @@
             <a href="{% url 'encyclopedia:index' %}" class="btn">Cancel</a>
             <button type="submit" class="btn">Save changes</button>
             <a href="{% url 'encyclopedia:delete' title %}" class="btn">Delete page</a>
+            <a href="{% url 'encyclopedia:change_title' title %}" class="btn">Rename Article</a>
+
             
         </div>
         

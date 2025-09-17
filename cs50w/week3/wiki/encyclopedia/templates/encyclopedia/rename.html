@@ -1,0 +1,18 @@
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+        <h1>Select Article title to be renamed</h1>
+        <ul>
+            {% for entry in entries %}
+            <!-- <li>{{ entry }}</li> -->
+            <li><input type="radio" name="existing_title"><label for="title">{{ entry }}</input></label></li>
+            {% empty %}
+                No entries yet
+            {% endfor%}
+        </ul>
+
+        <a href="{% url 'encyclopedia:change_title' %}" class="btn">Proceed</a>
+        <a href="{% url 'encyclopedia:index' %}" class="btn">Cancel</a>
+
+{% endblock %}
