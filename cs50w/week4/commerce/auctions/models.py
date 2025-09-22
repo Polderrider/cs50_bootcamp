@@ -14,11 +14,6 @@ from django.db import models
 
 
 
-# bid functionality -> listing.html button(place bid)input(currency) -> submit form(POST bid to bid table/class, render listing.html including bid table with latest bid)
-
-
-# watchlist functinality -> listing.html -> button(add to watchlist) -> submit form(POST listing data) -> watchlist.html(message item added to watchlist class/table) -> 
-
 
 class Listing(models.Model):
     
@@ -30,6 +25,9 @@ class Listing(models.Model):
     # category = models.CharField(max_length=64)
 
     # date_created = models.DateField()
+
+    def __str__(self):
+        return f'{self.id}: {self.item_name} Price: {self.price}'
 
 
 
