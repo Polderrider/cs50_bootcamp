@@ -19,8 +19,15 @@ clikcing on product area navigates to a product_listing page
 | initial   | Project Setup                | Initialize Django project and app, create required folders and basic templates                                           |
 | initial   | Index View                   | Render the index page with a list of encyclopedia entries (static placeholder list for now)                              |
 | 1         | Listing model + index.html   | A listing model holds listings details submitted in shell and displays in simple list format on index.html               |
-
-
 | 2         | Listing.html page            | use listing_id to navigate to listing.html to display basic information about a single product.                          |
+
+| 3.0       | create new listing            |  add form to submit details (name, desc, price) to                          |
+| 3.1       | views.create GET and POST     |  add http route functionality for GET (empty form) and POST (submit listing details)                        |
+| 3.2       | create.html page.             |  html form method="post" for submitting listing data                                |
+
+| 4         | update listing model- img,date |  expand Listing model to accept date and image                  |
+
+
+
 
                   
