@@ -1,8 +1,15 @@
-{% extends "auctions/layout.html %}
+{% extends "auctions/layout.html" %}
 
 {% block body %}
 
-<h1>Product A</h1>
+<h1>Welcome to the auction for a {{ listing.item_name }}</h1>
+
+<ul>
+    <li><p>{{ listing.description }}</p></li>
+     <li><p>{{ listing.price }} </p></li>
+
+</ul>
+
 
 
 

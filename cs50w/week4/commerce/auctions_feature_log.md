@@ -21,7 +21,6 @@ clikcing on product area navigates to a product_listing page
 | 1         | Listing model + index.html   | A listing model holds listings details submitted in shell and displays in simple list format on index.html               |
 
 
-
-| 2         | Listing.html page            | listing.html displays basic information about a product.                |
+| 2         | Listing.html page            | use listing_id to navigate to listing.html to display basic information about a single product.                          |
 
                   
