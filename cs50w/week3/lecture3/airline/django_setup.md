@@ -18,6 +18,14 @@ files
 
         from . import views
 
-4. 
+4. add amodel / class
+    advise django to setup a db 
+    tell django to upudate db to add info about models.  do this by "migrate" command
+    2 step process 1. create migration (instructions how to change db) 2. migrate apply instructions to db
+
+    (note, set model and class up first)
+    python manage.py makemigrations
+    then
+    python manage.py migrate
         
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+</head>
+<body>
+        {% if birthday %}
+    <h1>HAPPY BIRTHDAY {{ name }}!!!</h1>
+        {% else %}
+        <h1>{{ name }}, it isn't your birthday today</h1>
+        {% endif %}
+</body>
+</html>
