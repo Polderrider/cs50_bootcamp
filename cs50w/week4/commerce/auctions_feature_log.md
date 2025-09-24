@@ -25,7 +25,8 @@ clikcing on product area navigates to a product_listing page
 | 3.1       | views.create GET and POST     |  add http route functionality for GET (empty form) and POST (submit listing details)                        |
 | 3.2       | create.html page.             |  html form method="post" for submitting listing data                                |
 
-| 4         | update listing model- img,date |  expand Listing model to accept date and image                  |
+
+| 3.3         | update listing model- img,date |  expand Listing model to accept date and image                  |
 
 
 

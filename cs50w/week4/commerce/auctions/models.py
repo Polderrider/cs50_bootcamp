@@ -21,7 +21,7 @@ class Listing(models.Model):
     item_name = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
-    # image = models.ImageField()
+    image = models.ImageField(upload_to="listing_images/", blank=True)
     # category = models.CharField(max_length=64)
 
     # date_created = models.DateField()

@@ -4,13 +4,21 @@
 
 <h1>Welcome to the auction for a {{ listing.item_name }}</h1>
 
+{% if listing.image %}
+  <img 
+    class="listing_img"
+    src="{{ listing.image.url }}" 
+    alt="{{ listing.item_name }}">
+{% endif %}
+
+
 <ul>
     <li><p>{{ listing.description }}</p></li>
      <li><p>{{ listing.price }} </p></li>
 
 </ul>
 
-<a href="{% url 'index' %}">Return to homepage</a>
+<a href="{% url 'auctions:index' %}">Return to homepage</a>
 
 
 
