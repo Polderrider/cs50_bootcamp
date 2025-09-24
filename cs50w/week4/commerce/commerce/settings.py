@@ -121,3 +121,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media - an uploaded file gets saved to: media/listing_images/my_photo.jpg. in the database, the field just contains the string: "listing_images/my_photo.jpg"
+# When you do {{ listing.image.url }} in a template, Django prepends MEDIA_URL (/media/) to that stored path. Django will create MEDIA_ROOT automatically the first time a file is uploaded).
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
+
