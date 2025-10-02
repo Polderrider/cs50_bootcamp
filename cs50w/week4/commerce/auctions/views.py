@@ -17,6 +17,8 @@ def index(request):
         "listings": Listing.objects.all()
     })
 
+    
+
 def listing(request, listing_id):
     """ returns a single listing with details in response to a given id:int """
 
