@@ -29,3 +29,5 @@ Known affectionately as **The Gunners**, from their original association with th
 
 ### Identity
 Arsenal's rich legacy includes pre-war dominance (earning the moniker **"Bank of England club"** in the 1930s due to financial power), distinctive red-and-white kit, positional play philosophy, and a historic London presence. :contentReference[oaicite:10]{index=10}
+
+### They won't win the league
