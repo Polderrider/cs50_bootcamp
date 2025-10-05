@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 # ONE TO ONE
@@ -16,15 +17,17 @@ from django.db import models
 
 
 class Listing(models.Model):
-    
-    # username = models.CharField(max_length=64)
+    date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     item_name = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
     image = models.ImageField(upload_to="listing_images/", blank=True)
+    
+    
+    
+    
     # category = models.CharField(max_length=64)
 
-    # date_created = models.DateField()
 
     def __str__(self):
         return f'{self.id}: {self.item_name} Price: {self.price}'
